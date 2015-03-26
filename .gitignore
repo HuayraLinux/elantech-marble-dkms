@@ -1,0 +1,10 @@
+/elantech.ko
+/.elantech.ko.cmd
+/elantech.mod.c
+/elantech.mod.o
+/.elantech.mod.o.cmd
+/elantech.o
+/.elantech.o.cmd
+/.tmp_versions/elantech.mod
+/modules.order
+/Module.symvers
