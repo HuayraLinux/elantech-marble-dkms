@@ -6,6 +6,8 @@ PWD := $(shell pwd)
 all:
 	$(MAKE) -C $(KSOURCE) M=$(PWD) modules
 
+build: all
+
 clean:
 	@rm -fr *.mod.c *.mod *.o .*.cmd *.ko *~
 	@rm -fr .tmp_versions
