@@ -1,5 +1,5 @@
-elantech-marble-dkms (0.0.1) testing; urgency=low
+elantech-marble-dkms (0.1.0) testing; urgency=low
 
-  * Versión inicial, todavía inutilizable.
+  * Versión inicial.
 
  -- Matias De lellis <mati86dĺ@gmail.com>  Tue, 26 Mar 2015 12:32:17 -0300
