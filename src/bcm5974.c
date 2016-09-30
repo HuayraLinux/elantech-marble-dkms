@@ -40,6 +40,7 @@
 #include <linux/hid.h>
 #include <linux/mutex.h>
 #include <linux/input/mt.h>
+#include <linux/version.h>
 
 #define USB_VENDOR_ID_APPLE		0x05ac
 
@@ -564,8 +565,11 @@ static int report_tp_state(struct bcm5974 *dev, int size)
 		dev->index[n++] = &f[i];
 	}
 
+#if LINUX_VERSION_CODE <= KERNEL_VERSION(4,0,4)
 	input_mt_assign_slots(input, dev->slots, dev->pos, n);
-
+#else
+	input_mt_assign_slots(input, dev->slots, dev->pos, n, 0);
+#endif
 	for (i = 0; i < n; i++)
 		report_finger_data(input, dev->slots[i],
 				   &dev->pos[i], dev->index[i]);

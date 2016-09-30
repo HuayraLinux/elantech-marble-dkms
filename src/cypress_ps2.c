@@ -26,6 +26,7 @@
 #include <linux/wait.h>
 
 #include "cypress_ps2.h"
+#include <linux/version.h>
 
 #undef CYTP_DEBUG_VERBOSE  /* define this and DEBUG for more verbose dump */
 
@@ -537,8 +538,11 @@ static void cypress_process_packet(struct psmouse *psmouse, bool zero_pkt)
 		pos[i].x = contact->x;
 		pos[i].y = contact->y;
 	}
-
+#if LINUX_VERSION_CODE <= KERNEL_VERSION(4,0,4) 
 	input_mt_assign_slots(input, slots, pos, n);
+#else
+	input_mt_assign_slots(input, slots, pos, n, 0);
+#endif
 
 	for (i = 0; i < n; i++) {
 		contact = &report_data.contacts[i];
