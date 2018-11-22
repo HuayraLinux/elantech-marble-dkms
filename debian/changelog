@@ -1,3 +1,9 @@
+elantech-marble-dkms (0.2.1) unstable; urgency=medium
+
+  * fix build kernel 4.9 (close #3)
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Thu, 22 Nov 2018 12:36:19 -0300
+
 elantech-marble-dkms (0.2.0) torbellino; urgency=low
 
   * Versión inicial.
